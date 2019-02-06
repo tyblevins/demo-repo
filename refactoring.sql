@@ -1,13 +1,13 @@
 with orders as (
     select *
-    from source_data.orders
+    from {{ ref('stg_orders') }}
     where state != 'canceled'
       and extract(year from completed_at) < '2018'
       and email not like '%company.com'
 ),
 
 order_items as (
-  select * from source_data.order_items
+  select * from {{ ref('stg_order_items') }}
 ),
 
 order_totals as (
