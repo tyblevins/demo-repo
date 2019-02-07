@@ -32,7 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_learn:
-      # Applies to all files under models/example/sdf
+      # Applies to all files under models/example/
       example:
           materialized: view
       utils:
